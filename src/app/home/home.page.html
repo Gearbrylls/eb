@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>Crossfit Hunsfoss</ion-title> -->
+    <div class="week-selector">
+          <ion-icon class="week-selector-left" name="arrow-dropleft" (click)="showPreviousWeek()"></ion-icon>
+          <ion-title>Uke {{currentWeek}}</ion-title>
+          <ion-icon class="week-selector-right" name="arrow-dropright" (click)="showNextWeek()"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item *ngFor="let session of sessions">
+      <ion-label>
+        <h2>{{session.name}}</h2>
+        <h3 class="uppercase">{{session.start}}</h3>
+        <p>{{session.participants.length}} påmeldte, {{session.slots - session.participants.length}} ledige plasser</p>
+      </ion-label>
+      <div>
+        <ion-button (click)="signUp(session)" size="small" shape="round" color="primary" *ngIf="!session.currentUserAlreadySigned">
+          Meld på
+        </ion-button>
+        <ion-button (click)="signOf(session)" size="small" shape="round" color="warning" *ngIf="session.currentUserAlreadySigned">
+          Meld av
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

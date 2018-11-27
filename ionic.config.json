@@ -1,0 +1,8 @@
+{
+  "name": "easybooking",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
