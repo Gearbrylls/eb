@@ -84,4 +84,9 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <engine name="android" spec="7.1.2" />
+    <plugin name="cordova-plugin-ionic" spec="^5.2.7">
+        <variable name="APP_ID" value="b23b5d73" />
+        <variable name="CHANNEL_NAME" value="Master" />
+        <variable name="UPDATE_METHOD" value="background" />
+    </plugin>
 </widget>
